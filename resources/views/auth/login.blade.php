@@ -3,7 +3,7 @@
 @section('content')
 <div class="container">
   <h2>Login</h2>
-  <form role="form" method="post" action="{{ route('register') }}">
+  <form role="form" method="post" action="{{ route('login') }}">
   {{ csrf_field() }}
   @component('fields/input', [
     'errors' => $errors, 

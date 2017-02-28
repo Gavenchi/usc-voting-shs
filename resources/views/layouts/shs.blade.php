@@ -36,14 +36,9 @@
                 @else
                 <li class="nav-item">
                   <a href="#" class="nav-link dropdown-toggle" id="user-menu" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    {{ Auth::user()->username }}
+                    {{ Auth::user()->name }}
                   </a>
                   <div class="navbar-dropdown dropdown-menu dropdown-menu-right" aria-labelledby="user-menu">
-                    <h6 class="dropdown-header">Characters</h6>
-                    <a href="#" class="dropdown-item" type="button"><i class="fa fa-user" aria-hidden="true"></i> Manage Characters</a>
-                    <a href="#" class="dropdown-item" type="button"><i class="fa fa-plus" aria-hidden="true"></i> Create Character</a>
-                    <h6 class="dropdown-header">Account</h6>
-                    <a href="#" class="dropdown-item" type="button"><i class="fa fa-gear" aria-hidden="true"></i> Settings</a>
                     <a href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();" class="dropdown-item" type="button"><i class="fa fa-sign-out" aria-hidden="true"></i> Logout</a>
 
                     <form id="logout-form" action="{{ route('logout') }}" method="post" style="display: none;">
@@ -57,15 +52,13 @@
           </div>
         </nav>
         <div class="jumbotron">
-          <div class="d-flex justify-content-center">
+          <div class="d-flex align-items-center justify-content-center">
             <div class="p-2">
               <img class="img-fluid" src="{{ asset('img/usc.png') }}">
             </div>
             <div class="p-2">
-              <div class="align-middle">
-              <h1>University of San Carlos</h1>
-              <p class="lead">Senior High School</p>
-              </div>
+              <h2>University of San Carlos</h2>
+              <p class="lead">SHS Student Council Elections 2017</p>
             </div>
           </div>
         </div>

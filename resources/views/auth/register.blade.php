@@ -16,6 +16,15 @@
     @endcomponent
     @component('fields/input', [
       'errors' => $errors, 
+      'name' => 'name', 
+      'type' => 'text',
+      'required' => true,
+      'autofocus' => false
+    ])
+      Name
+    @endcomponent
+    @component('fields/input', [
+      'errors' => $errors, 
       'name' => 'password', 
       'type' => 'password',
       'required' => true,

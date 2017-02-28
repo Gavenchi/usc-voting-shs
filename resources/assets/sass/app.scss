@@ -1,0 +1,55 @@
+// Bootstrap
+@import 'variables';
+@import 'bootstrap';
+
+// Font Awesome
+@import 'font-awesome/font-awesome';
+
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+body {
+  /* Margin bottom by footer height */
+  margin-bottom: 200px;
+}
+
+main {
+  padding-top: 55px;
+}
+
+.navbar-dropdown {
+  margin-top: 7px;
+  border-radius: 0 0 0.5rem 0.5rem;
+}
+
+.footer {
+  font-family: 'Open Sans', sans-serif;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  /* Set the fixed height of the footer here */
+  height: 150px;
+  padding: 25px 0 25px 0;
+  background: #111;
+  color: #fff;
+}
+
+.footer-links {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+
+.footer-links li {
+  float: left;  
+}
+
+.footer-links li a {
+  display: block;
+  text-align: center;
+  text-decoration: none;
+  padding-right: 15px;
+}

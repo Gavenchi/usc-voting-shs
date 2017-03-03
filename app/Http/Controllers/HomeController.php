@@ -22,11 +22,9 @@ class HomeController extends Controller
 
     public function hasVoted() {
         $user = Auth::user();
-
-        $positions_count = Position::all()->count();
         $votes_count = Vote::where('user_id', $user->id)->get()->count();
 
-        return $positions_count == $votes_count;
+        return $votes_count > 0;
     }
 
     /**

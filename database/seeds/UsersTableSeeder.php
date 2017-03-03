@@ -26,7 +26,9 @@ class UsersTableSeeder extends Seeder
                 'password_plain' => $password
             ]);
         }
-
+		
+		$password = str_random(8);
+		
         DB::table('users')->insert([
             'username' => 'admin',
             'name' => 'Administrator',

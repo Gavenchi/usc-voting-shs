@@ -69,6 +69,10 @@ class VoteController extends Controller
         $positions = Position::all();
 
         foreach($positions as $position) {
+			
+			if(!$request->has(snake_case($position->name))) {
+				continue;
+			}
 
             $candidate_id = $request->input(snake_case($position->name));
 

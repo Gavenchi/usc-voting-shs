@@ -26,5 +26,13 @@ class UsersTableSeeder extends Seeder
                 'password_plain' => $password
             ]);
         }
+
+        DB::table('users')->insert([
+            'username' => 'admin',
+            'name' => 'Administrator',
+            'admin' => true,
+            'password' => bcrypt($password),
+            'password_plain' => $password
+        ]);
     }
 }

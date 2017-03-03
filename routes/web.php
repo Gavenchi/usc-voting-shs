@@ -13,3 +13,7 @@
 Auth::routes();
 
 Route::get('/', 'HomeController@index');
+Route::post('/vote', 'VoteController@vote')->name('vote');
+
+Route::get('/result', 'VoteController@index');
+Route::get('/result/chart', 'VoteController@chart');

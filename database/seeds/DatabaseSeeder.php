@@ -43,70 +43,70 @@ class DatabaseSeeder extends Seeder
                 'position_id' => 1, 
                 'name' => 'Ryan Fernando', 
                 'image' => '', 
-                'color' => ''
+                'color' => '#' . substr(md5(rand()), 0, 6)
             ],
             [
                 'party_id' => 2, 
                 'position_id' => 2, 
                 'name' => 'Maria Erna Cabarrubias', 
                 'image' => '', 
-                'color' => ''
+                'color' => '#' . substr(md5(rand()), 0, 6)
             ],
             [
                 'party_id' => 2, 
                 'position_id' => 3, 
                 'name' => 'Corinthia Marie Empe', 
                 'image' => '', 
-                'color' => ''
+                'color' => '#' . substr(md5(rand()), 0, 6)
             ],
             [
                 'party_id' => 2, 
                 'position_id' => 4, 
                 'name' => 'Febie Claire Pacheco', 
                 'image' => '', 
-                'color' => ''
+                'color' => '#' . substr(md5(rand()), 0, 6)
             ],
             [
                 'party_id' => 2, 
                 'position_id' => 5, 
                 'name' => 'Rec Gwen Zaragoza', 
                 'image' => '', 
-                'color' => ''
+                'color' => '#' . substr(md5(rand()), 0, 6)
             ],
             [
                 'party_id' => 2, 
                 'position_id' => 6, 
                 'name' => 'Jovan Valiente', 
                 'image' => '', 
-                'color' => ''
+                'color' => '#' . substr(md5(rand()), 0, 6)
             ],
             [
                 'party_id' => 2, 
                 'position_id' => 7, 
                 'name' => 'Marianne Suerte', 
                 'image' => '', 
-                'color' => ''
+                'color' => '#' . substr(md5(rand()), 0, 6)
             ],
             [
                 'party_id' => 2, 
                 'position_id' => 8, 
                 'name' => 'Krysta Eloise Sanchez', 
                 'image' => '', 
-                'color' => ''
+                'color' => '#' . substr(md5(rand()), 0, 6)
             ],
             [
                 'party_id' => 2, 
                 'position_id' => 9, 
                 'name' => 'Sam Joselle Parcon', 
                 'image' => '', 
-                'color' => ''
+                'color' => '#' . substr(md5(rand()), 0, 6)
             ],
             [
                 'party_id' => 2, 
                 'position_id' => 10, 
                 'name' => 'Kristine Villamor Lusoc', 
                 'image' => '', 
-                'color' => ''
+                'color' => '#' . substr(md5(rand()), 0, 6)
             ],
             // NATO
             [
@@ -114,28 +114,28 @@ class DatabaseSeeder extends Seeder
                 'position_id' => 2, 
                 'name' => 'Peter Niño Golo', 
                 'image' => '', 
-                'color' => ''
+                'color' => '#' . substr(md5(rand()), 0, 6)
             ],
             [
                 'party_id' => 3, 
                 'position_id' => 3, 
                 'name' => 'Bennette Reducto', 
                 'image' => '', 
-                'color' => ''
+                'color' => '#' . substr(md5(rand()), 0, 6)
             ],
             [
                 'party_id' => 3, 
                 'position_id' => 6, 
                 'name' => 'Charlotte Yvonne Reyes', 
                 'image' => '', 
-                'color' => ''
+                'color' => '#' . substr(md5(rand()), 0, 6)
             ],
             [
                 'party_id' => 3, 
                 'position_id' => 10, 
                 'name' => 'Jann Andrieh Licayan', 
                 'image' => '', 
-                'color' => ''
+                'color' => '#' . substr(md5(rand()), 0, 6)
             ],
             // Independent
             [
@@ -143,7 +143,7 @@ class DatabaseSeeder extends Seeder
                 'position_id' => 6, 
                 'name' => 'Cristjan Dave Bael', 
                 'image' => '', 
-                'color' => ''
+                'color' => '#' . substr(md5(rand()), 0, 6)
             ]
         ]);
 

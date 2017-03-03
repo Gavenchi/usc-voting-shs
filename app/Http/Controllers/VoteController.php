@@ -3,8 +3,91 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
+use \App\Position;
+use \App\Candidate;
+use \App\Vote;
 
 class VoteController extends Controller
 {
-    //
+
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
+
+    public function index() {
+        $positions = Position::all();
+        $data = array();
+        foreach($positions as $position) {
+            $candidates = array();
+            $results = array();
+            $colors = array();
+            foreach($position->candidates as $candidate) {
+                array_push($candidates, $candidate->name . ' (' . $candidate->party->name . ')');
+                array_push($results, $candidate->votes->count());
+                array_push($colors, $candidate->color);
+            }
+            array_push($data, [
+                'position' => $position->name,
+                'candidates' => $candidates,
+                'results' => $results,
+                'colors' => $colors
+            ]);
+        }
+        return $data;
+    }
+
+    public function chart() {
+        $resultData = $this->index();
+        $data = array();
+        foreach($resultData as $result) {
+            array_push($data, [
+                'chartData' => array(
+                    'labels' => $result['candidates'],
+                    'datasets' => [
+                        array(
+                            'backgroundColor' => $result['colors'],
+                            'data' => $result['results']
+                        )
+                    ]
+                ),
+                'options' => array(
+                    'title' => array(
+                        'display' => true,
+                        'text' => $result['position']
+                    )
+                )
+            ]);
+        }
+        return $data;
+    }
+    
+    public function vote(Request $request) {
+        $user = Auth::user();
+
+        $positions = Position::all();
+
+        foreach($positions as $position) {
+
+            $candidate_id = $request->input(snake_case($position->name));
+
+            $candidate = Candidate::find($candidate_id);
+
+            if($candidate->position->id == $position->id) {
+                // cast vote
+
+                Vote::create([
+                    'user_id' => $user->id,
+                    'position_id' => $position->id,
+                    'candidate_id' => $candidate_id,
+                    'ip_address' => $request->ip()
+                ]);
+            }
+
+        }
+
+        return view('complete');
+    }
+
 }

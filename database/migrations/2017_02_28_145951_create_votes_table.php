@@ -16,11 +16,15 @@ class CreateVotesTable extends Migration
         Schema::create('votes', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->bigInteger('user_id');
+            $table->bigInteger('position_id');
             $table->bigInteger('candidate_id');
             $table->ipAddress('ip_address');
             $table->timestamps();
             
-            $table->index(['user_id', 'candidate_id']);
+            // index both user and position for data integrity
+            $table->unique(['user_id', 'position_id']);
+
+            $table->foreign('position_id')->references('id')->on('candidates');
             $table->foreign('candidate_id')->references('id')->on('candidates');
         });
     }

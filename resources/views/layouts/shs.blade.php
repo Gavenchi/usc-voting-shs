@@ -30,9 +30,6 @@
                 <li class="nav-item">
                   <a class="nav-link" href="{{ route('login') }}">Login</a>
                 </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="{{ route('register') }}">Register</a>
-                </li>
                 @else
                 <li class="nav-item">
                   <a href="#" class="nav-link dropdown-toggle" id="user-menu" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -85,6 +82,11 @@
     </div>
 
     <!-- Scripts -->
+    <script>
+        window.Laravel = {!! json_encode([
+            'csrfToken' => csrf_token(),
+        ]) !!};
+    </script>
     <script src="{{ asset('js/app.js') }}"></script>
   </body>
 </html>

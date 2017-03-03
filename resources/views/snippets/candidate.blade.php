@@ -1,4 +1,4 @@
-<form method="post">
+<form action="{{ route('vote') }}" method="post">
   {{ csrf_field() }}
   @foreach ($positions as $position)
   <div class="d-flex flex-row justify-content-center">

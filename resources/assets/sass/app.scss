@@ -16,12 +16,21 @@ body {
 }
 
 main {
-  padding-top: 55px;
+  padding-top: 1rem;
 }
 
 .navbar-dropdown {
   margin-top: 7px;
   border-radius: 0 0 0.5rem 0.5rem;
+}
+
+.navbar-brand {
+  font-size: 1rem;
+  font-weight: 400;
+}
+
+.bg-usc {
+  background: #0e3c00;
 }
 
 .footer {
@@ -32,8 +41,12 @@ main {
   /* Set the fixed height of the footer here */
   height: 150px;
   padding: 25px 0 25px 0;
-  background: #111;
+  background: #0e3c00;
   color: #fff;
+}
+
+.footer .container {
+  background: #0e3c00;
 }
 
 .footer-links {
@@ -86,4 +99,20 @@ main {
   -webkit-filter: brightness(1.2) grayscale(.5) opacity(.9);
   -moz-filter: brightness(1.2) grayscale(.5) opacity(.9);
   filter: brightness(1.2) grayscale(.5) opacity(.9);
+}
+
+.candid-img:after {
+  background: #000000;
+}
+
+.navbar-container {
+  @extend .container;
+}
+
+@include media-breakpoint-down(xs) { 
+  .navbar-container {
+    max-width: 100%;
+    margin-left: 0;
+    margin-right: 0;
+  }
 }

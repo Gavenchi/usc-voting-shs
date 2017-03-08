@@ -2,6 +2,6 @@
 @section('title', 'Results')
 @section('content')
 <div id="results">
-  <results></results>
+  <anon-results></anon-results>
 </div>
 @endsection

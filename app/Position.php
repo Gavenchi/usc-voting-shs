@@ -11,4 +11,8 @@ class Position extends Model
     public function candidates() {
         return $this->hasMany('App\Candidate');
     }
+
+    public function campus() {
+        return $this->belongsTo('App\Campus');
+    }
 }

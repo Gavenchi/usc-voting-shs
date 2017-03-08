@@ -2,6 +2,8 @@
 
 use Illuminate\Database\Seeder;
 use League\Csv\Reader;
+use Illuminate\Support\Facades\Log;
+use App\User;
 
 class UsersTableSeeder extends Seeder
 {
@@ -18,9 +20,14 @@ class UsersTableSeeder extends Seeder
         foreach ($results as $row) {
             $password = str_random(8);
 
-            DB::table('users')->insert([
-                'username' => utf8_decode($row[1]),
-                'name' => utf8_decode(title_case($row[0])),
+            $name       = utf8_decode(title_case($row[0]));
+            $username   = utf8_decode($row[1]);
+            $campus_id  = $row[2];
+
+            User::create([
+                'campus_id' => $campus_id,
+                'username' => $username,
+                'name' => $name,
                 'admin' => false,
                 'password' => bcrypt($password),
                 'password_plain' => $password
@@ -29,7 +36,8 @@ class UsersTableSeeder extends Seeder
 		
 		$password = str_random(8);
 		
-        DB::table('users')->insert([
+        User::create([
+            'campus_id' => 0,
             'username' => 'admin',
             'name' => 'Administrator',
             'admin' => true,

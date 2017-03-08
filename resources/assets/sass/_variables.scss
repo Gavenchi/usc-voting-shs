@@ -108,7 +108,7 @@ $gray-lighter:              #eceeef !default;
 $gray-lightest:             #f7f7f9 !default;
 
 // Reassign color vars to semantic color scheme
-$brand-primary:             $gray-light !default;
+$brand-primary:             #0e3c00 !default;
 $brand-success:             $green !default;
 $brand-info:                $teal !default;
 $brand-warning:             $orange !default;
@@ -180,7 +180,7 @@ $sizes: (
 
 $body-bg:       $white !default;
 $body-color:    $gray-dark !default;
-$inverse-bg:    $gray-dark !default;
+$inverse-bg:    #0e3c00 !default;
 $inverse-color: $gray-lighter !default;
 
 
@@ -188,7 +188,7 @@ $inverse-color: $gray-lighter !default;
 //
 // Style anchor elements.
 
-$link-color:            $brand-primary !default;
+$link-color:            #ffffff !default;
 $link-decoration:       none !default;
 $link-hover-color:      darken($link-color, 15%) !default;
 $link-hover-decoration: underline !default;

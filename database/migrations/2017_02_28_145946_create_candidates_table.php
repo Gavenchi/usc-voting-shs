@@ -19,9 +19,9 @@ class CreateCandidatesTable extends Migration
             $table->bigInteger('position_id');
             $table->string('name')->unique();
             $table->text('image');
-            $table->string('color');
             $table->timestamps();
 
+            // lock each position to one particular id
             $table->unique(['position_id', 'party_id']);
 
             $table->foreign('party_id')->references('id')->on('parties')->onDelete('cascade');

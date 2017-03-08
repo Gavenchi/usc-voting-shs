@@ -26,7 +26,7 @@ class VoteController extends Controller
             foreach($position->candidates as $candidate) {
                 array_push($candidates, $candidate->name . ' (' . $candidate->party->name . ')');
                 array_push($results, $candidate->votes->count());
-                array_push($colors, $candidate->color);
+                array_push($colors, $candidate->party->color);
             }
             array_push($data, [
                 'position' => $position->name,
@@ -38,8 +38,37 @@ class VoteController extends Controller
         return $data;
     }
 
-    public function chart() {
-        $resultData = $this->index();
+    public function anonchart(Request $request) {
+        $positions = Position::all();
+        $data = array();
+        foreach($positions as $position) {
+            $candidates = array();
+            $results = array();
+            $colors = array();
+            $i = 'A';
+            foreach($position->candidates as $candidate) {
+                if($position->candidates->count() > 1) {
+                    array_push($candidates, 'Candidate '. $i++);
+                    array_push($results, $candidate->votes->count());
+                    array_push($colors, $candidate->party->color_anon);
+                } else {
+                    array_push($candidates, $candidate->name . ' (' . $candidate->party->name . ')');
+                    array_push($results, $candidate->votes->count());
+                    array_push($colors, $candidate->party->color);
+                }
+            }
+            array_push($data, [
+                'position' => $position->name,
+                'candidates' => $candidates,
+                'results' => $results,
+                'colors' => $colors
+            ]);
+        }
+
+        return $this->make_chart($data);
+    }
+
+    private function make_chart($resultData) {
         $data = array();
         foreach($resultData as $result) {
             array_push($data, [
@@ -61,6 +90,13 @@ class VoteController extends Controller
             ]);
         }
         return $data;
+    }
+
+    public function chart(Request $request) {
+        if($request->input('secret') == 'c2hzZWxlY3Rpb25zMjAxNw==') {
+            return $this->make_chart($this->index());
+        }
+        return array('status' => '403', 'message' => 'Forbidden to access resource');
     }
     
     public function vote(Request $request) {

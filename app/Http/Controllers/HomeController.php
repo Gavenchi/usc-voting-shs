@@ -45,4 +45,12 @@ class HomeController extends Controller
             return view('index', ['positions' => $positions]);
         }
     }
+
+    public function anon() {
+        if(Auth::user()->admin) {
+            return view('anonresults');
+        } else {
+            return redirect('/');
+        }
+    }
 }

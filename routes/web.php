@@ -13,7 +13,9 @@
 Auth::routes();
 
 Route::get('/', 'HomeController@index');
-Route::post('/vote', 'VoteController@vote')->name('vote');
+Route::get('/anonresult', 'HomeController@anon');
 
-Route::get('/result', 'VoteController@index');
-Route::get('/result/chart', 'VoteController@chart');
+Route::post('/vote', 'VoteController@vote')->name('vote');
+Route::post('/result', 'VoteController@index');
+Route::post('/result/chart', 'VoteController@chart');
+Route::post('/result/anonchart', 'VoteController@anonchart');

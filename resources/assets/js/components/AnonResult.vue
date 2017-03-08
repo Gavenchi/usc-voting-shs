@@ -20,13 +20,13 @@
     },
     computed: {
       results: function() {
-        return this.$store.state.results
+        return this.$store.state.anonResults
       }
     },
     mounted() {
-      this.$store.dispatch('syncResults')
+      this.$store.dispatch('syncAnonResults')
       this.interval = setInterval(function () {
-          this.$store.dispatch('syncResults')
+          this.$store.dispatch('syncAnonResults')
         }.bind(this), 10000);
     },
     beforeDestroy() {

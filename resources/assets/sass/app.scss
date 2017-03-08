@@ -74,6 +74,11 @@ main {
 .candid-selector input:active + .candid-img {
   opacity: 1;
 }
+
+.candid-selector input:checked + .candid-img:after {
+  opacity: 0;
+}
+
 .candid-selector input:checked + .candid-img {
   -webkit-filter: none;
   -moz-filter: none;
@@ -95,14 +100,18 @@ main {
   filter: brightness(1.8) grayscale(1) opacity(.7);
 }
 
+.candid-img:hover:after {
+  mix-blend-mode: color;
+}
+
+.candid-img:after {
+  position: absolute; content: ''; display: block; top: 0; left: 0; height: 100%; width: 100%; 
+}
+
 .candid-img:hover {
   -webkit-filter: brightness(1.2) grayscale(.5) opacity(.9);
   -moz-filter: brightness(1.2) grayscale(.5) opacity(.9);
   filter: brightness(1.2) grayscale(.5) opacity(.9);
-}
-
-.candid-img:after {
-  background: #000000;
 }
 
 .navbar-container {

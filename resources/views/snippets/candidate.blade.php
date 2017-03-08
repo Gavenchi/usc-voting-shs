@@ -10,10 +10,15 @@
       <div class="d-flex flex-row justify-content-center candid-selector">
         @foreach($position->candidates as $candidate)
           <section class="p-2">
+            <style>
+              #candid-{{ snake_case($candidate->name) }}:hover:after {
+                background: {{ $candidate->party->color }};
+              }
+            </style>
             <input id="{{ snake_case($candidate->name) }}" name="{{ snake_case($position->name) }}" value="{{ $candidate->id }}" type="radio">
-            <label class="candid-img" for="{{ snake_case($candidate->name) }}">
+            <label id="candid-{{ snake_case($candidate->name) }}" class="candid-img" for="{{ snake_case($candidate->name) }}">
               <figure class="figure">
-                <img src="{{ $candidate->image }}" class="figure-img img-fluid rounded" style="background: {{ $candidate->party->color }}" alt="Placeholder image">
+                <img src="{{ $candidate->image }}" class="figure-img img-fluid" alt="Placeholder image">
                 <figcaption class="figure-caption text-center">
                   {{ $candidate->name }}<br>
                   {{ $candidate->party->name }}

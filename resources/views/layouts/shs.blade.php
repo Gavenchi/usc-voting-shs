@@ -4,6 +4,8 @@
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="USC SHS Student Council Elections 2017">
+    <meta name="author" content="@ferrerojoshy">
     <title>{{ config('app.name', 'SHS') }} - @yield('title')</title>
 
     <!-- Styles -->

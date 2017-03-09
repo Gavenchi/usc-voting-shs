@@ -42,6 +42,9 @@
                 <li class="nav-item">
                   <a class="nav-link" href="/anonresult">Anonymous Results</a>
                 </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="/turnout">Voter's Turnout</a>
+                </li>
                 @endif
                 <li class="nav-item">
 

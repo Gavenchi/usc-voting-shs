@@ -31,7 +31,7 @@
         <tr>
           <td>{{ $user->username }}</td>
           <td>{{ $user->name }}</td>
-          <td>{{ $user->votes->first()->created_at }}</td>
+          <td>{{ $user->votes->first()->created_at->setTimezone('Asia/Taipei') }}</td>
         </tr>
         @endif
       @endforeach

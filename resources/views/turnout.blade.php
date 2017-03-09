@@ -26,15 +26,15 @@
       </tr>
     </thead>
     <tbody>
-      <tr>
-        @foreach($campus->users as $user)
-          @if($user->votes->count() > 0)
-            <td>{{ $user->username }}</td>
-            <td>{{ $user->name }}</td>
-            <td>{{ $user->votes->first()->created_at }}</td>
-          @endif
-        @endforeach
-      </tr>
+      @foreach($campus->users as $user)
+        @if($user->votes->count() > 0)
+        <tr>
+          <td>{{ $user->username }}</td>
+          <td>{{ $user->name }}</td>
+          <td>{{ $user->votes->first()->created_at }}</td>
+        </tr>
+        @endif
+      @endforeach
     </tbody>
   </table>
   @endforeach

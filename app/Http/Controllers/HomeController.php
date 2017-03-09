@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use \App\Position;
+use \App\Campus;
 use \App\Vote;
 
 class HomeController extends Controller
@@ -41,14 +42,30 @@ class HomeController extends Controller
         if($this->hasVoted()) {
             return view('complete');
         } else {
-            $positions = \App\Position::all();
-            return view('index', ['positions' => $positions]);
+            return view('index', ['positions' => Position::all()]);
         }
     }
 
     public function anon() {
         if(Auth::user()->admin) {
             return view('anonresults');
+        } else {
+            return redirect('/');
+        }
+    }
+
+    public function turnout() {
+        if(Auth::user()->admin) {
+            $campuses = Campus::where('id', '>', 0)->get();
+            foreach($campuses as $campus) {
+                foreach($campus->users() as $user) {
+                    if($user->votes->count() > 0) {
+
+                    }
+                }
+            }
+
+            return view('turnout', ['campuses' => $campuses]);
         } else {
             return redirect('/');
         }

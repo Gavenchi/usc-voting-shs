@@ -13,6 +13,7 @@
 Auth::routes();
 
 Route::get('/', 'HomeController@index');
+Route::get('/turnout', 'HomeController@turnout');
 Route::get('/anonresult', 'HomeController@anon');
 
 Route::post('/vote', 'VoteController@vote')->name('vote');

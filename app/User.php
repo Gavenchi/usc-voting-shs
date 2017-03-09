@@ -26,4 +26,8 @@ class User extends Authenticatable
     protected $hidden = [
         'password', 'remember_token', 'password_plain'
     ];
+
+    public function votes() {
+        return $this->hasMany('App\Vote');
+    }
 }

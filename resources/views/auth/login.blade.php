@@ -12,7 +12,7 @@
     'required' => true,
     'autofocus' => true
   ])
-    Username
+    ID
   @endcomponent
   @component('fields/input', [
     'errors' => $errors, 

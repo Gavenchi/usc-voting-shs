@@ -4,7 +4,7 @@
 
 ## About
 
-A simple voting web application using Laravel. Results are rendered using [chartjs](http://chartjs.org). Reactive updates powered by [Vue](https://vuejs.org). Database seeds used in the SHS Student Council Elections 2017 are included for others to test the application.
+A simple voting web application using [Laravel](http://laravel.com/). Results are rendered using [chartjs](http://chartjs.org). Reactive updates powered by [Vue](https://vuejs.org). Database seeds used in the SHS Student Council Elections 2017 are included for others to test the application.
 
 ## License
 

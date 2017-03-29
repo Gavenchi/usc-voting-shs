@@ -1,3 +1,4 @@
+[![No Maintenance Intended](http://unmaintained.tech/badge.svg)](http://unmaintained.tech/)
 <p align="center"><img src="https://uscshs.ga/img/usc.png"></p>
 <p align="center">University of San Carlos - Senior High School</p>
 <p align="center">Voting System</p>
